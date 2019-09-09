@@ -1,6 +1,8 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -15,8 +17,10 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Main extends Application implements EventHandler<ActionEvent> {
 
+    private Button btnLogin;
+    private Text title;
     @Override
     public void start(Stage stage) throws Exception{
         GridPane pane = new GridPane();
@@ -25,7 +29,7 @@ public class Main extends Application {
         pane.setVgap(10);
         pane.setPadding(new Insets(25, 25, 25, 25));
 
-        Text title = new Text("Welcome");
+        title = new Text("Welcome");
         title.setFont(Font.font("Tahoma", FontWeight.BOLD, 20));
         pane.add(title, 0, 0, 2, 1);
 
@@ -41,7 +45,8 @@ public class Main extends Application {
         PasswordField txtPassword = new PasswordField();
         pane.add(txtPassword, 1, 2);
 
-        Button btnLogin = new Button("Login");
+        btnLogin = new Button("Login");
+        btnLogin.setOnAction(this);
         HBox hbox = new HBox(10);
         hbox.setAlignment(Pos.BOTTOM_RIGHT);
         hbox.getChildren().add(btnLogin);
@@ -55,5 +60,12 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @Override
+    public void handle(ActionEvent actionEvent) {
+        if(actionEvent.getSource()==btnLogin){
+            title.setText("TEST");
+        }
     }
 }
