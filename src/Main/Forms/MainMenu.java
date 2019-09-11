@@ -1,5 +1,7 @@
-package Main;
+package Main.Forms;
 
+import Main.Main;
+import Main.Resources.GlobalVar;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;

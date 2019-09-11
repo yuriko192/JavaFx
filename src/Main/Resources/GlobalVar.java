@@ -1,5 +1,8 @@
-package Main;
+package Main.Resources;
 
+import Main.Forms.MainMenu;
+import Main.Forms.WindowBase;
+import Main.Main;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -8,6 +11,7 @@ import javafx.scene.control.Button;
 public class GlobalVar implements EventHandler<ActionEvent> {
     public static Button Rooms, Reservation, Services;
     public static Scene mainmenu, temp;
+    public static final int HEIGHT = 700, WIDTH = 900;
 
     public GlobalVar() {
         Rooms = new Button("Rooms");
@@ -16,8 +20,8 @@ public class GlobalVar implements EventHandler<ActionEvent> {
         Reservation.setOnAction(this);
         Services = new Button("Services");
         Services.setOnAction(this);
-        temp = new Scene(new WindowBase(), 300, 275);
-        mainmenu = new Scene(new MainMenu(), 300, 275);
+        temp = new Scene(new WindowBase(), WIDTH, HEIGHT);
+        mainmenu = new Scene(new MainMenu(), WIDTH, HEIGHT);
         Main.mainstage.setScene(mainmenu);
         Main.mainstage.show();
     }
@@ -39,3 +43,4 @@ public class GlobalVar implements EventHandler<ActionEvent> {
         }
     }
 }
+lasso, magic wand, patch, stamp, text

@@ -1,5 +1,6 @@
 package Main;
 
+import Main.Resources.GlobalVar;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
