@@ -1,6 +1,8 @@
 package Main.Forms;
 
 import Main.Resources.GlobalVar;
+import Main.Resources.Handler.MainFunction;
+import Main.Utils.ButtonFunction;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -8,7 +10,7 @@ import javafx.scene.layout.VBox;
 
 
 public class SidePanel extends VBox {
-    private Button Rooms, Reservation, Services;
+    private Button Rooms_btn, Reservation_btn, Services_btn, FloorPlan_btn;
 
     public SidePanel( ) {
         super();
@@ -24,17 +26,12 @@ public class SidePanel extends VBox {
         MenuBox.setMinHeight(0.8*GlobalVar.HEIGHT);
         MenuBox.setSpacing(50);
 
-        Rooms = new Button("Rooms");
-        Rooms.setOnAction(GlobalVar.fun_MainMenu);
-        GlobalVar.formatButton(Rooms);
-        Reservation = new Button("Reservation");
-        Reservation.setOnAction(GlobalVar.fun_MainMenu);
-        GlobalVar.formatButton(Reservation);
-        Services = new Button("Services");
-        Services.setOnAction(GlobalVar.fun_MainMenu);
-        GlobalVar.formatButton(Services);
+        Rooms_btn = new ButtonFunction("Rooms",GlobalVar.fun_Rooms,0);
+        Reservation_btn = new ButtonFunction("Reservation",GlobalVar.fun_MainMenu,0);
+        Services_btn = new ButtonFunction("Services",GlobalVar.fun_MainMenu,0);
+        FloorPlan_btn = new ButtonFunction("Floor Plan",GlobalVar.fun_FloorPlan,0);
 
-        MenuBox.getChildren().addAll(Rooms,Reservation,Services);
+        MenuBox.getChildren().addAll(Rooms_btn,Reservation_btn,Services_btn,FloorPlan_btn);
 
         this.getChildren().add(MenuBox);
     }

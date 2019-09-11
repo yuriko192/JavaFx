@@ -5,7 +5,6 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    //hotelnya  lantai dari 2 sampe 7
     public static Stage mainstage;
 
     public static void main(String[] args) {

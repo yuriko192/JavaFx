@@ -1,0 +1,7 @@
+hotelnya lantai dari 2 sampe 7
+ada 5 windows
+-Main Menu
+-Rooms
+-Reservation
+-Services + Contacts
+-FloorPlan
