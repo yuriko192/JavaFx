@@ -1,28 +1,26 @@
-package sample;
+package Main;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Main extends Application implements EventHandler<ActionEvent> {
+public class Main extends Application {
+    //hotelnya  lantai dari 2 sampe 7
+    public static Stage mainstage;
 
-    private Button btnLogin;
-    private Text title;
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage) {
+        mainstage = stage;
+        new GlobalVar();
+    }
+
+}
+
+
+/*
         GridPane pane = new GridPane();
         pane.setAlignment(Pos.CENTER);
         pane.setHgap(10);
@@ -55,17 +53,4 @@ public class Main extends Application implements EventHandler<ActionEvent> {
         Scene scene = new Scene(pane, 300, 275);
         stage.setScene(scene);
         stage.show();
-    }
-
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    @Override
-    public void handle(ActionEvent actionEvent) {
-        if(actionEvent.getSource()==btnLogin){
-            title.setText("TEST");
-        }
-    }
-}
+         */
