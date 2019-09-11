@@ -1,29 +1,33 @@
 package Main.Resources;
 
+import Main.Forms.FloorPlan;
 import Main.Forms.MainMenu;
 import Main.Forms.WindowBase;
 import Main.Main;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import Main.Resources.Handler.GoToMainMenu;
+import Main.Resources.Handler.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
-public class GlobalVar implements EventHandler<ActionEvent> {
-    public static Button Rooms, Reservation, Services;
-    public static Scene mainmenu, temp;
+public class GlobalVar {
+    public static Scene mainmenu, temp, floorplan_S;
     public static final int HEIGHT = 700, WIDTH = 900;
+    public static GoToMainMenu fun_MainMenu;
 
     public GlobalVar() {
-        Rooms = new Button("Rooms");
-        Rooms.setOnAction(this);
-        Reservation = new Button("Reservation");
-        Reservation.setOnAction(this);
-        Services = new Button("Services");
-        Services.setOnAction(this);
+        fun_MainMenu = new GoToMainMenu();
+        //========================================
+        floorplan_S = new Scene(new FloorPlan(),WIDTH,HEIGHT);
         temp = new Scene(new WindowBase(), WIDTH, HEIGHT);
         mainmenu = new Scene(new MainMenu(), WIDTH, HEIGHT);
+        //========================================
         Main.mainstage.setScene(mainmenu);
         Main.mainstage.show();
+    }
+
+    public static void formatButton(Button x) {
+        x.setMinWidth(130);
+        x.setMinHeight(50);
     }
 
     public static void formatMainButton(Button x) {
@@ -31,16 +35,4 @@ public class GlobalVar implements EventHandler<ActionEvent> {
         x.setMinHeight(50);
     }
 
-
-    @Override
-    public void handle(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == Rooms) {
-            Main.mainstage.setScene(mainmenu);
-        } else if (actionEvent.getSource() == Services) {
-
-        } else {
-
-        }
-    }
 }
-lasso, magic wand, patch, stamp, text

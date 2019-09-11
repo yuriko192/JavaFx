@@ -9,33 +9,39 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
 
 public class MainMenu extends FlowPane implements EventHandler<ActionEvent> {
-    private Button Rooms, Reservation, Services;
+    private Button Rooms, Reservation, Services,FloorPlan;
 
     public MainMenu() {
         super();
+        //==========================
         Rooms = new Button("Rooms");
-        Reservation = new Button("Reservation");
-        Services = new Button("Services");
         Rooms.setOnAction(this);
-        Services.setOnAction(this);
-        Reservation.setOnAction(this);
         GlobalVar.formatMainButton(Rooms);
-        GlobalVar.formatMainButton(Services);
+
+        Reservation = new Button("Reservation");
+        Reservation.setOnAction(this);
         GlobalVar.formatMainButton(Reservation);
+
+        Services = new Button("Services");
+        Services.setOnAction(this);
+        GlobalVar.formatMainButton(Services);
+
+        FloorPlan = new Button("FloorPlan");
+        FloorPlan.setOnAction(this);
+        GlobalVar.formatMainButton(FloorPlan);
+        //==================================
         this.setHgap(70);
         this.setVgap(25);
         this.setAlignment(Pos.CENTER);
-        this.getChildren().add(Rooms);
-        this.getChildren().add(Reservation);
-        this.getChildren().add(Services);
+        this.getChildren().addAll(Rooms,Reservation,Services,FloorPlan);
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         if (actionEvent.getSource() == Rooms) {
             Main.mainstage.setScene(GlobalVar.temp);
-        } else if (actionEvent.getSource() == Services) {
-
+        } else if (actionEvent.getSource() == FloorPlan) {
+            Main.mainstage.setScene(GlobalVar.floorplan_S);
         } else {
 
         }

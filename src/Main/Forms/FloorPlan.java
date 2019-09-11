@@ -1,7 +1,9 @@
 package Main.Forms;
 
-public class FloorPlan {
+public class FloorPlan extends WindowBase{
     public FloorPlan() {
+        super();
+
 
     }
 }
