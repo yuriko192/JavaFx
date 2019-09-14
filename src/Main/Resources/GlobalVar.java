@@ -14,8 +14,10 @@ public class GlobalVar {
     public static Scene mainmenu, temp, floorplan_S,Rooms_S;
     public static final int HEIGHT = 700, WIDTH = 900;
     public static MainFunction fun_MainMenu, fun_FloorPlan, fun_Rooms;
+    public static String RoomNumber;
 
     public GlobalVar() {
+        RoomNumber = "";
         fun_MainMenu = new GoToMainMenu();
         fun_FloorPlan = new GoToFloorPlan();
         fun_Rooms = new GoToRooms();
@@ -27,6 +29,7 @@ public class GlobalVar {
         //========================================
         Main.mainstage.setScene(mainmenu);
         Main.mainstage.show();
+        Main.mainstage.setResizable(false);
     }
 
     public static void formatButton(Button x) {

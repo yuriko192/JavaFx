@@ -10,8 +10,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 
-public class FloorPlan extends WindowBase {
+public class FloorPlan extends WindowBase{
     private final int FLOORS = 5;
+
 
     public FloorPlan() {
         super();
@@ -36,6 +37,7 @@ public class FloorPlan extends WindowBase {
         floorList.setContent(floors);
         this.add(floorList, 1, 1);
         //==========================================
+        //--------------search area---------------
         TextField searchBar = new TextField();
         searchBar.setPrefWidth(130);
         this.add(searchBar, 1, 2);
@@ -45,10 +47,10 @@ public class FloorPlan extends WindowBase {
         searchArea.setAlignment(Pos.BASELINE_RIGHT);
         searchArea.getChildren().add(searchButton);
         this.add(searchArea, 1, 3);
-
-
+        //============================================
+        //----------list kamar--------------------
         ScrollPane listkamarContainer = new ScrollPane();
-        listkamarContainer.setPrefWidth(550);
+        listkamarContainer.setMinWidth(300);
         FlowPane listKamar = new FlowPane();
         //size isinya 273 * 100
 
