@@ -1,7 +1,14 @@
 hotelnya lantai dari 2 sampe 7
+
 ada 5 windows
 -Main Menu
 -Rooms
 -Reservation
 -Services + Contacts
 -FloorPlan
+
+username sama pass simpen di sql
+
+sql.query=(select pass from table where username = ?)
+if sql.get().count() != 1 then error
+
