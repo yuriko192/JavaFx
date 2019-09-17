@@ -1,24 +1,28 @@
 package Main.Forms;
 
+import Main.Main;
 import Main.Resources.GlobalVar;
 import Main.Resources.Handler.MainFunction;
 import Main.Utils.ButtonFunction;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
 
-public class SidePanel extends VBox {
+public class SidePanel extends VBox implements EventHandler<MouseEvent> {
     private Button Rooms_btn, Reservation_btn, Services_btn, FloorPlan_btn;
 
     public SidePanel( ) {
         super();
 
         this.setAlignment(Pos.CENTER_LEFT);
-        ImageView LogoIV = new ImageView("Assets/Temp_Logo.png");
+        ImageView LogoIV = new ImageView("Assets/CHEBI12.jpg");
         LogoIV.setPreserveRatio(true);
         LogoIV.setFitWidth(150);
+        LogoIV.setOnMouseClicked(this);
         this.getChildren().add(LogoIV);
 
         VBox MenuBox = new VBox();
@@ -34,5 +38,10 @@ public class SidePanel extends VBox {
         MenuBox.getChildren().addAll(Rooms_btn,Reservation_btn,Services_btn,FloorPlan_btn);
 
         this.getChildren().add(MenuBox);
+    }
+
+    @Override
+    public void handle(MouseEvent mouseEvent) {
+        Main.mainstage.setScene(GlobalVar.mainmenu);
     }
 }
