@@ -16,8 +16,8 @@ public class MainMenu extends FlowPane {
         super();
         //==========================
         Rooms_btn = new ButtonFunction("Rooms",GlobalVar.fun_Rooms,1);
-        Reservation_btn = new ButtonFunction("Reservation",GlobalVar.fun_MainMenu,1);
-        Services_btn = new ButtonFunction("Services",GlobalVar.fun_MainMenu,1);
+        Reservation_btn = new ButtonFunction("Reservation",GlobalVar.fun_Reservation,1);
+        Services_btn = new ButtonFunction("Services",GlobalVar.fun_Services,1);
         FloorPlan_btn = new ButtonFunction("Floor Plan",GlobalVar.fun_FloorPlan,1);
 
         //==================================

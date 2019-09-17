@@ -1,9 +1,6 @@
 package Main.Resources;
 
-import Main.Forms.FloorPlan;
-import Main.Forms.MainMenu;
-import Main.Forms.Rooms;
-import Main.Forms.WindowBase;
+import Main.Forms.*;
 import Main.Main;
 import Main.Resources.Handler.GoToMainMenu;
 import Main.Resources.Handler.*;
@@ -11,9 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 public class GlobalVar {
-    public static Scene mainmenu, temp, floorplan_S,Rooms_S;
+    public static Scene mainmenu, temp, floorplan_S,Rooms_S,Reservation_s;
     public static final int HEIGHT = 700, WIDTH = 900;
-    public static MainFunction fun_MainMenu, fun_FloorPlan, fun_Rooms;
+    public static MainFunction fun_MainMenu, fun_FloorPlan, fun_Rooms,fun_Services,fun_Reservation;
     public static String RoomNumber;
 
     public GlobalVar() {
@@ -21,11 +18,14 @@ public class GlobalVar {
         fun_MainMenu = new GoToMainMenu();
         fun_FloorPlan = new GoToFloorPlan();
         fun_Rooms = new GoToRooms();
+        fun_Services = new GoToServices();
+        fun_Reservation=new GoToReservation();
         //========================================
         floorplan_S = new Scene(new FloorPlan(),WIDTH,HEIGHT);
         temp = new Scene(new WindowBase(), WIDTH, HEIGHT);
         mainmenu = new Scene(new MainMenu(), WIDTH, HEIGHT);
         Rooms_S = new Scene(new Rooms(),WIDTH,HEIGHT);
+        Reservation_s = new Scene(new Reservation(),WIDTH,HEIGHT);
         //========================================
         Main.mainstage.setScene(mainmenu);
         Main.mainstage.show();

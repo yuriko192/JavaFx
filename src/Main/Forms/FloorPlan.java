@@ -35,18 +35,18 @@ public class FloorPlan extends WindowBase{
         //------gabungin-------------
         floors.getChildren().addAll(floorarr);
         floorList.setContent(floors);
-        this.add(floorList, 1, 1);
+        this.add(floorList, 1, 3);
         //==========================================
         //--------------search area---------------
         TextField searchBar = new TextField();
         searchBar.setPrefWidth(130);
-        this.add(searchBar, 1, 2);
+        this.add(searchBar, 1, 4);
         Button searchButton = new Button("Search");
 
         HBox searchArea = new HBox(10);
         searchArea.setAlignment(Pos.BASELINE_RIGHT);
         searchArea.getChildren().add(searchButton);
-        this.add(searchArea, 1, 3);
+        this.add(searchArea, 1, 5);
         //============================================
         //----------list kamar--------------------
         ScrollPane listkamarContainer = new ScrollPane();
@@ -55,6 +55,6 @@ public class FloorPlan extends WindowBase{
         //size isinya 273 * 100
 
         listkamarContainer.setContent(listKamar);
-        this.add(listkamarContainer,2,1,3,4);
+        this.add(listkamarContainer,2,1,3,6);
     }
 }

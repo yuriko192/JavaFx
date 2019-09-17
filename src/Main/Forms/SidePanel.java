@@ -27,8 +27,8 @@ public class SidePanel extends VBox {
         MenuBox.setSpacing(50);
 
         Rooms_btn = new ButtonFunction("Rooms",GlobalVar.fun_Rooms,0);
-        Reservation_btn = new ButtonFunction("Reservation",GlobalVar.fun_MainMenu,0);
-        Services_btn = new ButtonFunction("Services",GlobalVar.fun_MainMenu,0);
+        Reservation_btn = new ButtonFunction("Reservation",GlobalVar.fun_Reservation,0);
+        Services_btn = new ButtonFunction("Services",GlobalVar.fun_Services,0);
         FloorPlan_btn = new ButtonFunction("Floor Plan",GlobalVar.fun_FloorPlan,0);
 
         MenuBox.getChildren().addAll(Rooms_btn,Reservation_btn,Services_btn,FloorPlan_btn);
