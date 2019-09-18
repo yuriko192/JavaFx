@@ -1,4 +1,4 @@
-package Main.Resources.Handler;
+package Main.Resources.Handler.Functions;
 
 import Main.Main;
 import Main.Resources.GlobalVar;

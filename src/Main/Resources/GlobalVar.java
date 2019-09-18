@@ -2,8 +2,7 @@ package Main.Resources;
 
 import Main.Forms.*;
 import Main.Main;
-import Main.Resources.Handler.GoToMainMenu;
-import Main.Resources.Handler.*;
+import Main.Resources.Handler.Functions.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 

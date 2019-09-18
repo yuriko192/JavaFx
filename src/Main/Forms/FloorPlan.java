@@ -1,6 +1,8 @@
 package Main.Forms;
 
 import Main.Resources.GlobalVar;
+import Main.Resources.Handler.Addons.RoomInfo;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -8,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
+import javax.net.ssl.HostnameVerifier;
 
 
 public class FloorPlan extends WindowBase{
@@ -50,8 +54,9 @@ public class FloorPlan extends WindowBase{
         //============================================
         //----------list kamar--------------------
         ScrollPane listkamarContainer = new ScrollPane();
-        listkamarContainer.setMinWidth(300);
-        FlowPane listKamar = new FlowPane();
+        HBox listKamar = new HBox();
+        listKamar.setPadding(new Insets(0,0,0,0));
+        listKamar.getChildren().add(new RoomInfo());
         //size isinya 273 * 100
 
         listkamarContainer.setContent(listKamar);

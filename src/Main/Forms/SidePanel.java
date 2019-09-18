@@ -2,7 +2,6 @@ package Main.Forms;
 
 import Main.Main;
 import Main.Resources.GlobalVar;
-import Main.Resources.Handler.MainFunction;
 import Main.Utils.ButtonFunction;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -19,7 +18,7 @@ public class SidePanel extends VBox implements EventHandler<MouseEvent> {
         super();
 
         this.setAlignment(Pos.CENTER_LEFT);
-        ImageView LogoIV = new ImageView("Assets/CHEBI12.jpg");
+        ImageView LogoIV = new ImageView("Assets/temp_logo.png");
         LogoIV.setPreserveRatio(true);
         LogoIV.setFitWidth(150);
         LogoIV.setOnMouseClicked(this);

@@ -1,4 +1,7 @@
 hotelnya lantai dari 2 sampe 7
+lt 2-5 Deluxe 10 kamar/floor
+lt 6 Suite 5 per floor
+lt 7 P.Suite 2 per floor
 
 ada 5 windows
 -Main Menu

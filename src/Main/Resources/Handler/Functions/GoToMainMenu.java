@@ -1,14 +1,14 @@
-package Main.Resources.Handler;
+package Main.Resources.Handler.Functions;
 
 import Main.Main;
 import Main.Resources.GlobalVar;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class GoToFloorPlan extends MainFunction implements EventHandler<ActionEvent> {
+public class GoToMainMenu extends MainFunction implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        Main.mainstage.setScene(GlobalVar.floorplan_S);
+        Main.mainstage.setScene(GlobalVar.mainmenu);
     }
 }

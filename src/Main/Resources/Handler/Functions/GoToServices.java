@@ -1,4 +1,4 @@
-package Main.Resources.Handler;
+package Main.Resources.Handler.Functions;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
