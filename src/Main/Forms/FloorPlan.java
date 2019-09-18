@@ -17,7 +17,7 @@ public class FloorPlan extends WindowBase implements EventHandler<ActionEvent> {
     public static final int ROOM_MAP[] = {10, 10, 10, 10, 5, 2};
     private VBox listKamar;
     private Button[] floorarr;
-    private HBox Rooms[][];
+    public static HBox Rooms[][];
 
     public FloorPlan() {
         super();
