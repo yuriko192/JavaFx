@@ -3,6 +3,7 @@ package Main.Forms;
 import Main.Main;
 import Main.Resources.GlobalVar;
 import Main.Utils.ButtonFunction;
+import Main.Utils.ImageContainer;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -33,8 +34,11 @@ public class SidePanel extends VBox implements EventHandler<MouseEvent> {
         MenuBox.setSpacing(50);
 
         Reservation_btn = new ButtonFunction("Reservation", GlobalVar.fun_Reservation, 0);
+        Reservation_btn.setGraphic(new ImageContainer("Assets/Reservation_logo.png",2));
         Services_btn = new ButtonFunction("Services", GlobalVar.fun_Services, 0);
-        FloorPlan_btn = new ButtonFunction("Floor Plan", GlobalVar.fun_FloorPlan, 0);
+        Services_btn.setGraphic(new ImageContainer("Assets/Services_logo.png",2));
+        FloorPlan_btn = new ButtonFunction("Rooms", GlobalVar.fun_Rooms, 0);
+        FloorPlan_btn.setGraphic(new ImageContainer("Assets/Rooms_logo.png",2));
 
         MenuBox.getChildren().addAll(Reservation_btn, Services_btn, FloorPlan_btn);
 

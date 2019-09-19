@@ -9,14 +9,14 @@ import javafx.scene.control.Button;
 public class GlobalVar {
     public static Scene mainmenu, temp, floorplan_S, Rooms_S, Reservation_s;
     public static final int HEIGHT = 700, WIDTH = 900;
-    public static MainFunction fun_MainMenu, fun_FloorPlan, fun_Information, fun_Services, fun_Reservation;
+    public static MainFunction fun_MainMenu, fun_Rooms, fun_Information, fun_Services, fun_Reservation;
     public static String RoomNumber;
 
     public GlobalVar() {
 
         RoomNumber = "";
         fun_MainMenu = new GoToMainMenu();
-        fun_FloorPlan = new GoToFloorPlan();
+        fun_Rooms = new GoToRooms();
         fun_Information = new GoToInformation();
         fun_Services = new GoToServices();
         fun_Reservation = new GoToReservation();
@@ -33,8 +33,8 @@ public class GlobalVar {
     }
 
     public static void formatButton(Button x) {
-        x.setMinWidth(130);
-        x.setMinHeight(50);
+        x.setPrefWidth(150);
+        x.setMinHeight(70);
     }
 
     public static void formatMainMenuButton(Button x) {
