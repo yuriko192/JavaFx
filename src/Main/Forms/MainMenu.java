@@ -33,7 +33,7 @@ public class MainMenu extends GridPane {
         Reservation_btn.setGraphic(new ImageContainer("Assets/Reservation.PNG"));
         Services_btn = new ButtonFunction(null,GlobalVar.fun_Services,2);
         Services_btn.setGraphic(new ImageContainer("Assets/Services.png"));
-        Info_btn = new ButtonFunction(null,GlobalVar.fun_FloorPlan,2);
+        Info_btn = new ButtonFunction(null,GlobalVar.fun_Information,2);
         Info_btn.setGraphic(new ImageContainer("Assets/Info.png"));
 
 

@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 
 
 public class SidePanel extends VBox implements EventHandler<MouseEvent> {
-    private Button Rooms_btn, Reservation_btn, Services_btn, FloorPlan_btn;
+    private Button Reservation_btn, Services_btn, FloorPlan_btn;
 
     public SidePanel() {
         super();
@@ -32,12 +32,11 @@ public class SidePanel extends VBox implements EventHandler<MouseEvent> {
         MenuBox.setMinHeight(0.7 * GlobalVar.HEIGHT);
         MenuBox.setSpacing(50);
 
-        Rooms_btn = new ButtonFunction("Rooms", GlobalVar.fun_Rooms, 0);
         Reservation_btn = new ButtonFunction("Reservation", GlobalVar.fun_Reservation, 0);
         Services_btn = new ButtonFunction("Services", GlobalVar.fun_Services, 0);
         FloorPlan_btn = new ButtonFunction("Floor Plan", GlobalVar.fun_FloorPlan, 0);
 
-        MenuBox.getChildren().addAll(Rooms_btn, Reservation_btn, Services_btn, FloorPlan_btn);
+        MenuBox.getChildren().addAll(Reservation_btn, Services_btn, FloorPlan_btn);
 
         this.getChildren().add(MenuBox);
     }
