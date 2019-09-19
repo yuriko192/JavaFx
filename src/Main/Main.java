@@ -17,6 +17,7 @@ public class Main extends Application {
         new GlobalVar();
     }
 
+
 }
 
 
