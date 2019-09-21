@@ -9,12 +9,11 @@ public class GoToInformation extends MainFunction implements EventHandler<Action
     @Override
     public void handle(ActionEvent actionEvent) {
         Alert info = new Alert(Alert.AlertType.INFORMATION);
-        String x =
-                "Ivan   / 535180030\n" +
-                "Wilson / 535180042\n" +
-                "==================\n" +
-                "A small Front End Hotel Application"
-                ;
+        String x = "535180030 - Ivan Wijaya\n" +
+                "535150012 - Edwin Jayadi\n" +
+                "535180042 - Wilson Wibowo \n" +
+                "============\n" +
+                "A small Front End Hotel Application";
         info.setTitle("Information");
         info.setContentText(x);
         info.setHeaderText("This Program Is Made By:");

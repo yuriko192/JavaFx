@@ -14,10 +14,10 @@ import javafx.scene.layout.VBox;
 
 public class FloorPlan extends WindowBase implements EventHandler<ActionEvent> {
     public static final int FLOORS = 6;
-    public static final int ROOM_MAP[] = {10, 10, 10, 10, 5, 2};
+    public static final int[] ROOM_MAP = {10, 10, 10, 10, 5, 2};
     private VBox listKamar;
     private Button[] floorarr;
-    public static HBox Rooms[][];
+    public static HBox[][] Rooms;
 
     public FloorPlan() {
         super();
@@ -44,7 +44,7 @@ public class FloorPlan extends WindowBase implements EventHandler<ActionEvent> {
         //------initialize button---------
         floorarr = new Button[FLOORS];
         for (int i = 0; i < FLOORS; i++) {
-            floorarr[i] = new Button("Floor 0" + Integer.toString(i + 2));
+            floorarr[i] = new Button("Floor 0" + (i + 2));
             floorarr[i].setPrefWidth(128);
             floorarr[i].setPrefHeight(40);
             floorarr[i].setOnAction(this);
