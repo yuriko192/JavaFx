@@ -5,10 +5,11 @@ import Main.Main;
 import Main.Resources.Handler.Functions.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 
 public class GlobalVar {
     public static Scene mainmenu, temp, floorplan_S, Rooms_S, Reservation_s;
-    public static final int HEIGHT = 700, WIDTH = 900;
+    public static final int HEIGHT = 680, WIDTH = 900;
     public static MainFunction fun_MainMenu, fun_Rooms, fun_Information, fun_Services, fun_Reservation;
     public static String RoomNumber;
 
@@ -27,7 +28,9 @@ public class GlobalVar {
         Rooms_S = new Scene(new Rooms(), WIDTH, HEIGHT);
         Reservation_s = new Scene(new Reservation(), WIDTH, HEIGHT);
         //========================================
-        Main.mainstage.setScene(mainmenu);
+        Main.mainstage.setScene(new Scene(new Login(), 300, 400));
+        Main.mainstage.setTitle("Welcome");
+        Main.mainstage.getIcons().add(new Image("Assets/Icon.png"));
         Main.mainstage.show();
         Main.mainstage.setResizable(false);
     }

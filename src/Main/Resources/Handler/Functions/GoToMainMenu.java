@@ -10,5 +10,6 @@ public class GoToMainMenu extends MainFunction implements EventHandler<ActionEve
     @Override
     public void handle(ActionEvent actionEvent) {
         Main.mainstage.setScene(GlobalVar.mainmenu);
+        Main.mainstage.setTitle("Main Menu");
     }
 }
