@@ -8,22 +8,26 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 
 public class GlobalVar {
-    public static Scene mainmenu, temp, floorplan_S, Rooms_S, Reservation_s;
+    public static Scene mainmenu, floorplan_S, Rooms_S, Reservation_s;
     public static final int HEIGHT = 680, WIDTH = 900;
-    public static MainFunction fun_MainMenu, fun_Rooms, fun_Information, fun_Services, fun_Reservation;
+    public static MainFunction fun_MainMenu, fun_Floorplan, fun_Information, fun_Services, fun_Reservation;
     public static String RoomNumber;
+    public static Image Img_Pres, Img_Suite, Img_Deluxe;
+
 
     public GlobalVar() {
-
+        Img_Deluxe = new Image("Assets/Deluxe.png");
+        Img_Pres = new Image("Assets/Pres.png");
+        Img_Suite = new Image("Assets/Suite.png");
+        //==================================
         RoomNumber = "";
         fun_MainMenu = new GoToMainMenu();
-        fun_Rooms = new GoToRooms();
+        fun_Floorplan = new GoToFloorplan();
         fun_Information = new GoToInformation();
         fun_Services = new GoToServices();
         fun_Reservation = new GoToReservation();
         //========================================
         floorplan_S = new Scene(new FloorPlan(), WIDTH, HEIGHT);
-        temp = new Scene(new WindowBase(), WIDTH, HEIGHT);
         mainmenu = new Scene(new MainMenu(), WIDTH, HEIGHT);
         Rooms_S = new Scene(new Rooms(), WIDTH, HEIGHT);
         Reservation_s = new Scene(new Reservation(), WIDTH, HEIGHT);
@@ -38,11 +42,6 @@ public class GlobalVar {
     public static void formatButton(Button x) {
         x.setPrefWidth(150);
         x.setMinHeight(70);
-    }
-
-    public static void formatMainMenuButton(Button x) {
-        x.setMinWidth(100);
-        x.setMinHeight(50);
     }
 
 

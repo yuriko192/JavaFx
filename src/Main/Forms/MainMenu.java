@@ -27,7 +27,7 @@ public class MainMenu extends GridPane {
         LogoCont.setStyle("-fx-border-radius: 5;" + "-fx-border-color: black;");
         this.add(LogoCont,0,0,2,1);
 
-        Rooms_btn = new ButtonFunction(null,GlobalVar.fun_Rooms,1);
+        Rooms_btn = new ButtonFunction(null, GlobalVar.fun_Floorplan, 1);
         Rooms_btn.setGraphic(new ImageContainer("Assets/Rooms.png",1));
         Reservation_btn = new ButtonFunction(null,GlobalVar.fun_Reservation,1);
         Reservation_btn.setGraphic(new ImageContainer("Assets/Reservation.PNG",1));

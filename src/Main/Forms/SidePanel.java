@@ -37,7 +37,7 @@ public class SidePanel extends VBox implements EventHandler<MouseEvent> {
         Reservation_btn.setGraphic(new ImageContainer("Assets/Reservation_logo.png",2));
         Services_btn = new ButtonFunction("Services", GlobalVar.fun_Services, 0);
         Services_btn.setGraphic(new ImageContainer("Assets/Services_logo.png",2));
-        FloorPlan_btn = new ButtonFunction("Rooms", GlobalVar.fun_Rooms, 0);
+        FloorPlan_btn = new ButtonFunction("Rooms", GlobalVar.fun_Floorplan, 0);
         FloorPlan_btn.setGraphic(new ImageContainer("Assets/Rooms_logo.png",2));
 
         MenuBox.getChildren().addAll(Reservation_btn, Services_btn, FloorPlan_btn);

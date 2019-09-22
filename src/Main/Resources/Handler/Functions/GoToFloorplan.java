@@ -5,7 +5,7 @@ import Main.Resources.GlobalVar;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class GoToRooms extends MainFunction implements EventHandler<ActionEvent> {
+public class GoToFloorplan extends MainFunction implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
