@@ -1,6 +1,5 @@
 package Main.Forms;
 
-import Main.Main;
 import Main.Resources.GlobalVar;
 import Main.Utils.ButtonFunction;
 import Main.Utils.ImageContainer;
@@ -47,6 +46,6 @@ public class SidePanel extends VBox implements EventHandler<MouseEvent> {
 
     @Override
     public void handle(MouseEvent mouseEvent) {
-        Main.mainstage.setScene(GlobalVar.mainmenu);
+        GlobalVar.fun_MainMenu.handle(null);
     }
 }

@@ -12,12 +12,12 @@ import javafx.scene.text.FontWeight;
 
 
 public class Rooms extends WindowBase {
-    private static Label lbNomorRuangan;
+    private static Label lbNomorRuangan, lbKondisi;
     private static ImageView Room_Logo;
 
     public Rooms() {
         super();
-        //============================================
+        //==============Logo dan Nomor Kamar==========
         HBox hbox1 = new HBox();
         hbox1.setAlignment(Pos.CENTER);
         Room_Logo = new ImageView();
@@ -28,25 +28,26 @@ public class Rooms extends WindowBase {
         lbNomorRuangan.setFont(Font.font("Tahoma", FontWeight.BOLD, 25));
         hbox1.getChildren().add(lbNomorRuangan);
         this.add(hbox1, 1, 1);
-        //*************************************************
+        //************Image View Preview Kamar*************
         Label lbPreviewKamar = new Label("Preview Kamar");
         lbPreviewKamar.setFont(Font.font("Tahoma", FontWeight.BOLD, 10));
         this.add(lbPreviewKamar, 1, 2);
         //*************************************************
-        //===========================================
+        //==============Middle Content===============
         VBox vbox2 = new VBox();
 
-        Label lbKondisi = new Label("Kondisi Kamar");
+        lbKondisi = new Label("Room Available");
         lbKondisi.setFont(Font.font("Tahoma", FontWeight.BOLD, 30));
         vbox2.getChildren().add(lbKondisi);
 
         Label lbDeskripsiKamar = new Label("Deskripsi Kamar");
-        lbDeskripsiKamar.setFont(Font.font("Tahoma", FontWeight.BOLD, 30));
+        lbDeskripsiKamar.setFont(Font.font("Tahoma", FontWeight.BOLD, 15));
         vbox2.getChildren().add(lbDeskripsiKamar);
 
         this.add(vbox2, 2, 1, 1, 2);
         //============================================
         VBox vbox3 = new VBox();
+        vbox3.setAlignment(Pos.BOTTOM_CENTER);
 
         Label lbHarga = new Label("Harga");
         lbHarga.setFont(Font.font("Tahoma", FontWeight.BOLD, 20));
@@ -66,13 +67,14 @@ public class Rooms extends WindowBase {
         vbox4.getChildren().add(lbTimeLeft);
 
         Button btnCheckInOut = new Button("Check In/Out");
+        btnCheckInOut.setOnAction(GlobalVar.fun_Floorplan);
         btnCheckInOut.setPrefHeight(140);
         btnCheckInOut.setPrefWidth(180);
 
         vbox3.getChildren().add(vbox4);
         vbox3.getChildren().add(btnCheckInOut);
 
-        this.add(vbox3, 3, 3, 1, 2);
+        this.add(vbox3, 3, 5, 1, 2);
 
     }
 

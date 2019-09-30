@@ -71,5 +71,6 @@ public class RoomInfo extends HBox implements EventHandler<MouseEvent> {
     public void handle(MouseEvent mouseEvent) {
         Rooms.update(Roomnum, RoomType);
         Main.mainstage.setScene(GlobalVar.Rooms_S);
+        Main.mainstage.setTitle("Room Information");
     }
 }

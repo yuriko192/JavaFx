@@ -10,5 +10,6 @@ public class GoToFloorplan extends MainFunction implements EventHandler<ActionEv
     @Override
     public void handle(ActionEvent actionEvent) {
         Main.mainstage.setScene(GlobalVar.floorplan_S);
+        Main.mainstage.setTitle("Rooms");
     }
 }

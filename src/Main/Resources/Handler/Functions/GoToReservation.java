@@ -8,5 +8,6 @@ public class GoToReservation extends MainFunction {
     @Override
     public void handle(ActionEvent actionEvent) {
         Main.mainstage.setScene(GlobalVar.Reservation_s);
+        Main.mainstage.setTitle("Reservation");
     }
 }

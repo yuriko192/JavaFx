@@ -15,6 +15,7 @@ public class Main extends Application {
     public void start(Stage stage) {
         mainstage = stage;
         new GlobalVar();
+
     }
 
 
