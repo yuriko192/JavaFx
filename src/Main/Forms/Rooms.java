@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -12,11 +13,15 @@ import javafx.scene.text.FontWeight;
 
 
 public class Rooms extends WindowBase {
-    private static Label lbNomorRuangan, lbKondisi;
+    private static Label lbNomorRuangan, lbKondisi, lbCheckIn, lbTimeLeft;
     private static ImageView Room_Logo, PreviewKamar;
 
     public Rooms() {
         super();
+        GridPane MainPane = new GridPane();
+        MainPane.setAlignment(Pos.CENTER_LEFT);
+        MainPane.setHgap(10);
+        MainPane.setVgap(10);
         //==============Logo dan Nomor Kamar==========
         HBox hbox1 = new HBox();
         hbox1.setAlignment(Pos.CENTER);
@@ -27,13 +32,12 @@ public class Rooms extends WindowBase {
         lbNomorRuangan = new Label();
         lbNomorRuangan.setFont(Font.font("Tahoma", FontWeight.BOLD, 25));
         hbox1.getChildren().add(lbNomorRuangan);
-        this.add(hbox1, 1, 1);
+        MainPane.add(hbox1, 0, 0);
         //************Image View Preview Kamar*************
         PreviewKamar = new ImageView();
         PreviewKamar.setFitWidth(200);
         PreviewKamar.setFitHeight(105);
-        this.add(PreviewKamar, 1, 2);
-        //*************************************************
+        MainPane.add(PreviewKamar, 0, 1);
         //==============Middle Content===============
         VBox vbox2 = new VBox();
 
@@ -45,7 +49,7 @@ public class Rooms extends WindowBase {
         lbDeskripsiKamar.setFont(Font.font("Tahoma", FontWeight.BOLD, 15));
         vbox2.getChildren().add(lbDeskripsiKamar);
 
-        this.add(vbox2, 2, 1, 1, 2);
+        MainPane.add(vbox2, 1, 0, 1, 2);
         //============================================
         VBox vbox3 = new VBox();
         vbox3.setAlignment(Pos.BOTTOM_CENTER);
@@ -55,16 +59,12 @@ public class Rooms extends WindowBase {
         vbox3.getChildren().add(lbHarga);
 
         VBox vbox4 = new VBox();
-
-        Label lbCheckIn = new Label("Check In");
+        //-------Check Out Time------------------
+        lbCheckIn = new Label("-");
         lbCheckIn.setFont(Font.font("Tahoma", FontWeight.BOLD, 20));
-        Label lbCheckOut = new Label("Check Out");
-        lbCheckOut.setFont(Font.font("Tahoma", FontWeight.BOLD, 20));
-        Label lbTimeLeft = new Label("Time Left");
+        lbTimeLeft = new Label();
         lbTimeLeft.setFont(Font.font("Tahoma", FontWeight.BOLD, 20));
-
         vbox4.getChildren().add(lbCheckIn);
-        vbox4.getChildren().add(lbCheckOut);
         vbox4.getChildren().add(lbTimeLeft);
 
         Button btnCheckInOut = new Button("Check In/Out");
@@ -75,7 +75,8 @@ public class Rooms extends WindowBase {
         vbox3.getChildren().add(vbox4);
         vbox3.getChildren().add(btnCheckInOut);
 
-        this.add(vbox3, 3, 4, 1, 2);
+        MainPane.add(vbox3, 2, 2);
+        this.setCenter(MainPane);
 
     }
 

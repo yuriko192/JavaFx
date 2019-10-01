@@ -1,11 +1,13 @@
 package Main.Forms;
 
-import Main.Resources.Handler.Addons.RoomInfo;
+import Main.Resources.GlobalVar;
+import Main.Utils.RoomInfo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -19,6 +21,10 @@ public class FloorPlan extends WindowBase implements EventHandler<ActionEvent> {
 
     public FloorPlan() {
         super();
+        GridPane MainPane = new GridPane();
+        MainPane.setAlignment(Pos.CENTER_LEFT);
+        MainPane.setHgap(10);
+        MainPane.setVgap(10);
 
         Rooms = new HBox[FLOORS][];
         for (int i = 0; i < FLOORS; i++) {
@@ -38,6 +44,7 @@ public class FloorPlan extends WindowBase implements EventHandler<ActionEvent> {
         //-----initialize scrollpanel-------
         ScrollPane floorList = new ScrollPane();
         floorList.setPrefWidth(130);
+        floorList.setPrefHeight(GlobalVar.HEIGHT * 0.9);
         //------initialize button---------
         floorarr = new Button[FLOORS];
         for (int i = 0; i < FLOORS; i++) {
@@ -52,17 +59,19 @@ public class FloorPlan extends WindowBase implements EventHandler<ActionEvent> {
         //------gabungin-------------
         floors.getChildren().addAll(floorarr);
         floorList.setContent(floors);
-        this.add(floorList, 1, 0, 1, 7);
+        MainPane.add(floorList, 0, 0);
         //==========================================
         //----------list kamar--------------------
         ScrollPane listkamarContainer = new ScrollPane();
         listkamarContainer.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         listkamarContainer.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        listkamarContainer.setPrefHeight(GlobalVar.HEIGHT * 0.9);
         listKamar = new VBox();
 
         listKamar.getChildren().setAll(Rooms[0]);
         listkamarContainer.setContent(listKamar);
-        this.add(listkamarContainer, 2, 0, 3, 7);
+        MainPane.add(listkamarContainer, 1, 0);
+        this.setCenter(MainPane);
     }
 
     @Override

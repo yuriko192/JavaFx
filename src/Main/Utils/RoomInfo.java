@@ -1,4 +1,4 @@
-package Main.Resources.Handler.Addons;
+package Main.Utils;
 
 import Main.Forms.Rooms;
 import Main.Main;
