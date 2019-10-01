@@ -1,39 +1,68 @@
 package Main.Forms;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 
-public class Reservation extends WindowBase {
+public class Reservation extends WindowBase implements EventHandler<ActionEvent> {
+    public static TextField kodebooking;
+
     public Reservation() {
         super();
-        TextField kodebooking = new TextField();
-        this.add(new Label("Booking Number:"), 1, 0);
-        this.add(kodebooking, 2, 0);
+        GridPane MainPane = new GridPane();
+        MainPane.setAlignment(Pos.CENTER);
+        MainPane.setHgap(30);
+        MainPane.setVgap(10);
+
+        kodebooking = new TextField();
+        kodebooking.setEditable(false);
+        kodebooking.setMaxWidth(250);
+        MainPane.add(new Label("Booking Number:"), 0, 0);
+        MainPane.add(kodebooking, 1, 0);
 
         TextField namalengkap = new TextField();
-        this.add(new Label("Guest Name :"), 1, 1);
-        this.add(namalengkap, 2, 1);
+        namalengkap.setPrefWidth(500);
+        MainPane.add(new Label("Guest Name :"), 0, 1);
+        MainPane.add(namalengkap, 1, 1);
 
         TextField nomorktp = new TextField();
-        this.add(new Label("Identity Number :"), 1, 2);
-        this.add(nomorktp, 2, 2);
+        MainPane.add(new Label("Identity Number :"), 0, 2);
+        MainPane.add(nomorktp, 1, 2);
 
         TextField nomorkamar = new TextField();
-        this.add(new Label("Room Number :"), 1, 3);
-        this.add(nomorkamar, 2, 3);
+        MainPane.add(new Label("Room Number :"), 0, 3);
+        MainPane.add(nomorkamar, 1, 3);
 
         TextField sistembayar = new TextField();
-        this.add(new Label("Payment Details:"), 1, 4);
-        this.add(sistembayar, 2, 4);
+        MainPane.add(new Label("Payment Details:"), 0, 4);
+        MainPane.add(sistembayar, 1, 4);
 
         TextField harga = new TextField();
-        this.add(new Label("Price :"), 1, 6);
-        this.add(harga, 2, 6);
+        MainPane.add(new Label("Price :"), 0, 6);
+        MainPane.add(harga, 1, 6);
 
         Button button = new Button("...");
-        this.add(button, 3, 5);
+        button.setOnAction(this);
+        MainPane.add(button, 1, 5);
+        this.setCenter(MainPane);
+    }
 
+    public static void update(String Res_Number) {
+        kodebooking.setText(Res_Number);
 
+    }
+
+    @Override
+    public void handle(ActionEvent actionEvent) {
+        Alert x = new Alert(Alert.AlertType.INFORMATION);
+        x.setTitle("Details");
+        x.setHeaderText("Payment Details");
+        x.setContentText("Payment Details Here");
+        x.show();
     }
 }
