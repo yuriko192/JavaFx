@@ -13,7 +13,7 @@ import javafx.scene.text.FontWeight;
 
 public class Rooms extends WindowBase {
     private static Label lbNomorRuangan, lbKondisi;
-    private static ImageView Room_Logo;
+    private static ImageView Room_Logo, PreviewKamar;
 
     public Rooms() {
         super();
@@ -29,9 +29,10 @@ public class Rooms extends WindowBase {
         hbox1.getChildren().add(lbNomorRuangan);
         this.add(hbox1, 1, 1);
         //************Image View Preview Kamar*************
-        Label lbPreviewKamar = new Label("Preview Kamar");
-        lbPreviewKamar.setFont(Font.font("Tahoma", FontWeight.BOLD, 10));
-        this.add(lbPreviewKamar, 1, 2);
+        PreviewKamar = new ImageView();
+        PreviewKamar.setFitWidth(200);
+        PreviewKamar.setFitHeight(105);
+        this.add(PreviewKamar, 1, 2);
         //*************************************************
         //==============Middle Content===============
         VBox vbox2 = new VBox();
@@ -74,7 +75,7 @@ public class Rooms extends WindowBase {
         vbox3.getChildren().add(vbox4);
         vbox3.getChildren().add(btnCheckInOut);
 
-        this.add(vbox3, 3, 5, 1, 2);
+        this.add(vbox3, 3, 4, 1, 2);
 
     }
 
@@ -82,12 +83,15 @@ public class Rooms extends WindowBase {
         lbNomorRuangan.setText("Kamar: " + Room_Number);
         switch (Room_Type) {
             case 1:
+                PreviewKamar.setImage(GlobalVar.PImg_Deluxe);
                 Room_Logo.setImage(GlobalVar.Img_Deluxe);
                 break;
             case 2:
+                PreviewKamar.setImage(GlobalVar.PImg_Suite);
                 Room_Logo.setImage(GlobalVar.Img_Suite);
                 break;
             case 3:
+                PreviewKamar.setImage(GlobalVar.PImg_Pres);
                 Room_Logo.setImage(GlobalVar.Img_Pres);
                 break;
         }

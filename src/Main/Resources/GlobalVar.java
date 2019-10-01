@@ -12,13 +12,16 @@ public class GlobalVar {
     public static final int HEIGHT = 680, WIDTH = 900;
     public static MainFunction fun_MainMenu, fun_Floorplan, fun_Information, fun_Services, fun_Reservation;
     public static String RoomNumber;
-    public static Image Img_Pres, Img_Suite, Img_Deluxe;
+    public static Image Img_Pres, Img_Suite, Img_Deluxe, PImg_Pres, PImg_Suite, PImg_Deluxe;
 
 
     public GlobalVar() {
         Img_Deluxe = new Image("Assets/Deluxe.png");
         Img_Pres = new Image("Assets/Pres.png");
         Img_Suite = new Image("Assets/Suite.png");
+        PImg_Deluxe = new Image("Assets/Deluxe.jpg");
+        PImg_Pres = new Image("Assets/Pres.jpg");
+        PImg_Suite = new Image("Assets/Suite.jpg");
         //==================================
         RoomNumber = "";
         fun_MainMenu = new GoToMainMenu();
