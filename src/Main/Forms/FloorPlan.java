@@ -1,13 +1,11 @@
 package Main.Forms;
 
-import Main.Resources.GlobalVar;
 import Main.Resources.Handler.Addons.RoomInfo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -23,16 +21,16 @@ public class FloorPlan extends WindowBase implements EventHandler<ActionEvent> {
         super();
 
         Rooms = new HBox[FLOORS][];
-        for(int i=0;i<FLOORS;i++){
+        for (int i = 0; i < FLOORS; i++) {
             Rooms[i] = new HBox[ROOM_MAP[i]];
-            for(int ii=0;ii<ROOM_MAP[i];ii++){
+            for (int ii = 0; ii < ROOM_MAP[i]; ii++) {
                 int temp;
-                if(i<4){
+                if (i < 4) {
                     temp = 1;
-                }else{
-                    temp = i-2;
+                } else {
+                    temp = i - 2;
                 }
-                Rooms[i][ii] = new RoomInfo((i+2)*100+ii+1, temp,1);
+                Rooms[i][ii] = new RoomInfo((i + 2) * 100 + ii + 1, temp, 1);
             }
         }
 
@@ -40,7 +38,6 @@ public class FloorPlan extends WindowBase implements EventHandler<ActionEvent> {
         //-----initialize scrollpanel-------
         ScrollPane floorList = new ScrollPane();
         floorList.setPrefWidth(130);
-        floorList.setPrefHeight(GlobalVar.HEIGHT * 0.75);
         //------initialize button---------
         floorarr = new Button[FLOORS];
         for (int i = 0; i < FLOORS; i++) {
@@ -55,19 +52,8 @@ public class FloorPlan extends WindowBase implements EventHandler<ActionEvent> {
         //------gabungin-------------
         floors.getChildren().addAll(floorarr);
         floorList.setContent(floors);
-        this.add(floorList, 1, 3);
+        this.add(floorList, 1, 0, 1, 7);
         //==========================================
-        //--------------search area---------------
-        TextField searchBar = new TextField();
-        searchBar.setPrefWidth(130);
-        this.add(searchBar, 1, 4);
-        Button searchButton = new Button("Search");
-
-        HBox searchArea = new HBox(10);
-        searchArea.setAlignment(Pos.BASELINE_RIGHT);
-        searchArea.getChildren().add(searchButton);
-        this.add(searchArea, 1, 5);
-        //============================================
         //----------list kamar--------------------
         ScrollPane listkamarContainer = new ScrollPane();
         listkamarContainer.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
@@ -76,14 +62,14 @@ public class FloorPlan extends WindowBase implements EventHandler<ActionEvent> {
 
         listKamar.getChildren().setAll(Rooms[0]);
         listkamarContainer.setContent(listKamar);
-        this.add(listkamarContainer, 2, 1, 3, 6);
+        this.add(listkamarContainer, 2, 0, 3, 7);
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         Object x = actionEvent.getSource();
-        for(int i=0;i<FLOORS;i++){
-            if(x == floorarr[i]){
+        for (int i = 0; i < FLOORS; i++) {
+            if (x == floorarr[i]) {
                 listKamar.getChildren().setAll(Rooms[i]);
             }
         }

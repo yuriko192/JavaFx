@@ -18,7 +18,7 @@ public class WindowBase extends GridPane{
         this.setPadding(new Insets(25, 25, 25, 25));
         VBox SidePane = new SidePanel();
 
-        this.add(SidePane, 0, 0, 1, 6);
+        this.add(SidePane, 0, 0, 1, 7);
     }
 
 }

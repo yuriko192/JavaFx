@@ -1,29 +1,38 @@
 package Main.Forms;
 
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class Reservation extends WindowBase {
     public Reservation() {
         super();
-        Label Bnum_lab = new Label("Booking Number:");
-        Bnum_lab.setPrefHeight(100);
-        this.add(Bnum_lab,1,1);
+        TextField kodebooking = new TextField();
+        this.add(new Label("Booking Number:"), 1, 0);
+        this.add(kodebooking, 2, 0);
 
-        Label Guest_n_lab = new Label("Guest Name:");
-        Guest_n_lab.setPrefHeight(100);
-        this.add(Guest_n_lab,1,2);
+        TextField namalengkap = new TextField();
+        this.add(new Label("Guest Name :"), 1, 1);
+        this.add(namalengkap, 2, 1);
 
-        Label Room_lab = new Label("Room Number:");
-        Room_lab.setPrefHeight(100);
-        this.add(Room_lab,1,3);
+        TextField nomorktp = new TextField();
+        this.add(new Label("Identity Number :"), 1, 2);
+        this.add(nomorktp, 2, 2);
 
-        Label Payment_lab = new Label("Pament Details:");
-        Payment_lab.setPrefHeight(100);
-        this.add(Payment_lab,1,4);
+        TextField nomorkamar = new TextField();
+        this.add(new Label("Room Number :"), 1, 3);
+        this.add(nomorkamar, 2, 3);
 
-        Label Price_lab = new Label("Room Price:");
-        Price_lab.setPrefHeight(100);
-        this.add(Price_lab,1,5);
+        TextField sistembayar = new TextField();
+        this.add(new Label("Payment Details:"), 1, 4);
+        this.add(sistembayar, 2, 4);
+
+        TextField harga = new TextField();
+        this.add(new Label("Price :"), 1, 6);
+        this.add(harga, 2, 6);
+
+        Button button = new Button("...");
+        this.add(button, 3, 5);
 
 
     }
