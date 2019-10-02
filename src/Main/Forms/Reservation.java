@@ -1,5 +1,6 @@
 package Main.Forms;
 
+import Main.Resources.GlobalVar;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -8,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 
 public class Reservation extends WindowBase implements EventHandler<ActionEvent> {
     public static TextField kodebooking;
@@ -49,6 +51,14 @@ public class Reservation extends WindowBase implements EventHandler<ActionEvent>
         Button button = new Button("...");
         button.setOnAction(this);
         MainPane.add(button, 1, 5);
+
+        HBox bottCont = new HBox();
+        bottCont.setAlignment(Pos.BOTTOM_RIGHT);
+        Button button2 = new Button("Check In");
+        button2.setOnAction(GlobalVar.fun_MainMenu);
+        bottCont.getChildren().add(button2);
+        MainPane.add(bottCont, 1, 7);
+
         this.setCenter(MainPane);
     }
 
